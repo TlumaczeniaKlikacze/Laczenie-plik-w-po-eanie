@@ -27,12 +27,15 @@ const work = ()=>{
        tmp = list.find(e=> e.ean == el.ean)
        console.log(tmp)
        if(tmp != undefined){
+           //id kolumny
+           //tutaj można łączyć wiele wartości
            el.id = tmp.id
        }
        el.ean = '"'+el.ean+'"'
 
     })
     const csvWriter = createCsvWrite({fieldDelimiter:';', path:`pol.csv`,header:[
+        //tutaj zapisujemy wartości które chcemy w pliku csv
         {id:"cena_brutto",title:"cena_brutto"},
         {id:"id",title:"id"},
     
