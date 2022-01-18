@@ -18,6 +18,7 @@ csv({delimiter:";",noheader:false})
         work()
     })
 })
+
 let tmp = 0
 const csv_writer = require('csv-writer');
 const createCsvWrite = csv_writer.createObjectCsvWriter;
@@ -32,8 +33,7 @@ const work = ()=>{
 
     })
     const csvWriter = createCsvWrite({fieldDelimiter:';', path:`pol.csv`,header:[
-        {id:"ean",title:"ean"},
-        {id:"brutto",title:"brutto"},
+        {id:"cena_brutto",title:"cena_brutto"},
         {id:"id",title:"id"},
     
     ]})
