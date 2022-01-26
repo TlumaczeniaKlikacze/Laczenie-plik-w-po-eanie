@@ -24,6 +24,7 @@ const csv_writer = require('csv-writer');
 const createCsvWrite = csv_writer.createObjectCsvWriter;
 const work = ()=>{
     do_tego_dodac.forEach(el=>{
+              if(el.ean.trim().length !=0){
        tmp = list.find(e=> e.ean == el.ean)
        console.log(tmp)
        if(tmp != undefined){
@@ -32,7 +33,7 @@ const work = ()=>{
            el.id = tmp.id
        }
        el.ean = '"'+el.ean+'"'
-
+              }
     })
     const csvWriter = createCsvWrite({fieldDelimiter:';', path:`pol.csv`,header:[
         //tutaj zapisujemy wartości które chcemy w pliku csv
